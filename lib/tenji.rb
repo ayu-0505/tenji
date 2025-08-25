@@ -6,7 +6,4 @@ require_relative 'tenji/converter'
 
 module Tenji
   class Error < StandardError; end
-
-  class Braille
-  end
 end
