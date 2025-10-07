@@ -94,5 +94,10 @@ RSpec.describe Tenji do
       text = '⠀⠁⠂⠃⠄⠅⠆⠇⠉⠊⠋⠌⠍⠎⠏⠒⠓⠔⠕⠖⠗⠛⠜⠝⠞⠟⠤⠥⠦⠧⠭⠮⠯⠶⠷⠿'
       expect(converter.convert_to_oumen(text)).to eq('⠿⠾⠶⠽⠵⠭⠼⠴⠬⠤⠻⠳⠫⠣⠛⠺⠲⠪⠢⠚⠒⠹⠱⠩⠡⠙⠑⠉⠸⠰⠨⠠⠘⠐⠈⠀')
     end
+
+    it 'reverses braille correctly with line breaks preserved' do
+      text = "⠁⠃⠉⠋⠊\n⠡⠣⠩⠫⠪\n⠱⠳⠹⠻⠺"
+      expect(converter.convert_to_oumen(text)).to eq("⠑⠙⠉⠘⠈\n⠕⠝⠍⠜⠌\n⠗⠟⠏⠞⠎")
+    end
   end
 end

@@ -83,7 +83,14 @@ module Tenji
     end
 
     def convert_to_oumen(raised_braille)
-      raised_braille.chars.map { |char| braille_mirror(char) }.reverse.join
+      raised_braille.lines.map do |line|
+        reversed_line = line.chars.map { |char| braille_mirror(char) }.reverse
+        if reversed_line[0] == "\n"
+          reversed_line.delete_at(0)
+          reversed_line << "\n"
+        end
+        reversed_line.join
+      end.join
     end
 
     private
