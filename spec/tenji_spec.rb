@@ -81,9 +81,14 @@ RSpec.describe Tenji do
     end
 
     context 'when text containing a mix of kanji, numbers, alphabets, and hiragana' do
-      it 'onverts numbers, alphabets, and hiragana, and removes all other characters' do
+      it 'converts numbers, alphabets, and hiragana, and removes all other characters' do
         text = 'その　人と　２ねんも　あってない。　けつえきがたわ　A B O AB　のどれ？　わ　びっくりした！'
         expect(converter.convert_to_tenji(text)).to eq('⠺⠎⠀⠞⠀⠼⠃⠏⠴⠾⠀⠁⠂⠟⠅⠃⠲⠀⠫⠝⠋⠣⠐⠡⠕⠄⠀⠰⠠⠁⠀⠰⠠⠃⠀⠰⠠⠕⠀⠰⠠⠠⠁⠃⠀⠎⠐⠞⠛⠢⠀⠄⠀⠐⠧⠂⠩⠓⠳⠕⠖')
+      end
+
+      it 'handles contiguous letters and hiragana without interrupting conversion' do
+        text = 'a5　abcそんぐ　1p　2にん　まる1　さいずA'
+        expect(converter.convert_to_tenji(text)).to eq('⠰⠁⠼⠑⠀⠰⠁⠃⠉⠺⠴⠐⠩⠀⠼⠁⠰⠏⠀⠼⠃⠇⠴⠀⠵⠙⠼⠁⠀⠱⠃⠐⠹⠰⠠⠁')
       end
     end
   end

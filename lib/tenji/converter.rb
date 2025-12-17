@@ -58,6 +58,8 @@ module Tenji
             redo
           end
           if char.match?(/[a-zA-Z]/)
+            # アルファベットで書かれた文字の前に外字符を入れて、alphabet状態に移行
+            result << Tenji::Mapping::GAIJIFU
             state = :alphabet
             redo
           end
@@ -68,7 +70,9 @@ module Tenji
             state = :kana
             redo
           end
-          if char == /[0-9]/
+          if char.match?(/[0-9]/)
+            # 数字がはじまる合図の数符を入れて、number状態に移行
+            result << Tenji::Mapping::SUFU
             state = :number
             redo
           end
