@@ -16,7 +16,7 @@ module Tenji
   #   converter.convert_to_oumen("⠪⠴⠇⠗⠥")
   #   # => "⠬⠺⠸⠦⠕"
   class Converter
-    def convert_to_tenji(text)
+    def convert_to_tenji(text) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
       normalize_text = normalize(text)
       state = :kana
       result = []
@@ -125,7 +125,7 @@ module Tenji
     end
 
     def convert_num_to_braille(char)
-      Tenji::Mapping::NUNBER[char]
+      Tenji::Mapping::NUMBER[char]
     end
 
     def convert_alphabet_to_braille(char)
@@ -133,7 +133,7 @@ module Tenji
       Tenji::Mapping::ALPHABET[lowercase]
     end
 
-    def braille_mirror(char)
+    def braille_mirror(char) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity
       code_point = char.ord
       return char unless (0x2800..0x283F).cover?(code_point)
 

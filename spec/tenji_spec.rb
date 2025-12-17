@@ -93,7 +93,7 @@ RSpec.describe Tenji do
     end
   end
 
-  describe '#convert_to_indented_braille' do
+  describe '#convert_to_oumen' do
     converter = Tenji::Converter.new
     it 'mirrors braille horizontally for the entire text' do
       text = '⠀⠁⠂⠃⠄⠅⠆⠇⠉⠊⠋⠌⠍⠎⠏⠒⠓⠔⠕⠖⠗⠛⠜⠝⠞⠟⠤⠥⠦⠧⠭⠮⠯⠶⠷⠿'

@@ -20,22 +20,6 @@ Metrics/MethodLength:
   Max: 20
   Exclude:
     - spec/**/*
-  ExcludedMethods:
-    - convert_to_tenji
-
-Metrics/AbcSize:
-  ExcludedMethods:
-    - convert_to_tenji
-    - braille_mirror
-
-Metrics/CyclomaticComplexity:
-  ExcludedMethods:
-    - convert_to_tenji
-    - braille_mirror
-
-Metrics/PerceivedComplexity:
-  ExcludedMethods:
-    - convert_to_tenji
 
 Metrics/BlockLength:
   Exclude:
