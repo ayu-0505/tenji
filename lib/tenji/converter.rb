@@ -125,7 +125,7 @@ module Tenji
     end
 
     def convert_num_to_braille(char)
-      Tenji::Mapping::NUNBER[char]
+      Tenji::Mapping::NUMBER[char]
     end
 
     def convert_alphabet_to_braille(char)
