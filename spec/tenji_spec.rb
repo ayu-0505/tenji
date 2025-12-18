@@ -59,7 +59,7 @@ RSpec.describe Tenji do
 
       it 'adds 数符 when the following character belongs to the あ row or the ら row' do
         text = '1えん　２り　３うぉん　４い　５りょう'
-        expect(converter.convert_to_tenji(text)).to eq('⠼⠁⠤⠋⠴⠀⠼⠃⠤⠓⠀⠼⠉⠢⠊⠴⠀⠼⠙⠤⠃⠀⠼⠑⠈⠚⠉')
+        expect(converter.convert_to_tenji(text)).to eq('⠼⠁⠤⠋⠴⠀⠼⠃⠤⠓⠀⠼⠉⠤⠢⠊⠴⠀⠼⠙⠤⠃⠀⠼⠑⠈⠚⠉')
       end
     end
 
