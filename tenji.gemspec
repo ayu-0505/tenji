@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description = 'Tenji provides a straightforward way to convert Japanese Hiragana or Katakana text into Japanese Braille. It is designed to be lightweight and easy to use in Ruby applications.'
   spec.homepage = 'https://github.com/ayu-0505/tenji'
   spec.license = 'MIT'
-  spec.required_ruby_version = '>= 3.1.0'
+  spec.required_ruby_version = '>= 3.4.4'
 
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['source_code_uri'] = 'https://github.com/ayu-0505/tenji'
