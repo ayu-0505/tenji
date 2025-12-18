@@ -117,7 +117,7 @@ module Tenji
       is_yoon = %w[キ シ チ ニ ヒ ミ リ ギ ジ ヂ ビ ピ].include?(char) && %w[ャ ュ ョ].include?(next_char)
       is_tokusyuon = %w[ァ ィ ゥ ェ ォ ュ ョ].include?(next_char) && Tenji::Mapping::TOKUSYUON[next_char].include?(char)
       if is_yoon || is_tokusyuon
-        one_kana = char << next_char
+        one_kana = char + next_char
         Tenji::Mapping::KANA[one_kana]
       else
         Tenji::Mapping::KANA[char]
